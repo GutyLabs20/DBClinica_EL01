@@ -1,0 +1,71 @@
+﻿@model DBClinica_EL01.Models.Citas
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h1>Cita @Html.DisplayFor(model => model.Nrocita)</h1>
+
+<h3>¿Estas seguro de eliminar la cita?</h3>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Fecha)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Fecha)
+    </dd>
+    <dt class="col-sm-2">
+        Paciente:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CodmedNavigation.Nommed)
+    </dd>
+    <dt class="col-sm-2">
+        Paciente:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CodpacNavigation.Nompac)
+    </dd>
+    <dt class="col-sm-2">
+        Descripción:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Descrip)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Pago)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Pago)
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Estado)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Estado)
+    </dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Nrocita" />
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    <a class="btn btn-primary" asp-action="Index">Regresar a citas</a>
+</form>
+
+@*<div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+
+
+
+            </div>
+
+        </div>
+
+    </div>*@

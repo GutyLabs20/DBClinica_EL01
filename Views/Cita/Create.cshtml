@@ -1,0 +1,65 @@
+﻿@model DBClinica_EL01.Models.Citas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Citas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nrocita" class="control-label"></label>
+                <input asp-for="Nrocita" class="form-control" />
+                <span asp-validation-for="Nrocita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codmed" class="control-label"></label>
+                <select asp-for="Codmed" class="form-control" asp-items="ViewBag.MEDICOS"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codpac" class="control-label"></label>
+                <select asp-for="Codpac" class="form-control" asp-items="ViewBag.PACIENTES"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pago" class="control-label"></label>
+                <input asp-for="Pago" class="form-control" />
+                <span asp-validation-for="Pago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descrip" class="control-label"></label>
+                <input asp-for="Descrip" class="form-control" />
+                <span asp-validation-for="Descrip" class="text-danger"></span>
+            </div>
+
+            @*Agregando Fecha*@
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            @* --------------- *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+
+                <a class="btn btn-primary" asp-action="Index">Regresar a Citas</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a class="btn btn-primary" asp-action="Index">Regresar a Citas</a>
+</div>*@
+
+<div class="alert alert-danger">
+    @ViewBag.MENSAJE
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

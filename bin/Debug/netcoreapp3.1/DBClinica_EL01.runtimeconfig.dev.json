@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\glabs\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\glabs\\.nuget\\packages"
+    ]
+  }
+}
